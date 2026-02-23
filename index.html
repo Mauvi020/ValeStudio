@@ -3,183 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ValeStudio | ValeSMP</title>
+<title>ValeStudio | Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Orbitron',sans-serif;
-    background:#0b0b0b;
-    color:white;
-}
-
-/* ===== HERO ===== */
-header{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-    url("https://images.unsplash.com/photo-1627856014754-0c1a7f5c4c08") center/cover;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-header h1{
-    font-size:4rem;
-    color:#ffd700;
-    text-shadow:0 0 25px #ffd700;
-}
-
-header p{
-    margin-top:20px;
-    font-size:1.2rem;
-    max-width:600px;
-    opacity:0.9;
-}
-
-.server-ip{
-    margin-top:20px;
-    font-size:1.6rem;
-    color:#ffd700;
-    cursor:pointer;
-    text-shadow:0 0 15px #ffd700;
-    transition:0.3s;
-}
-
-.server-ip:hover{
-    transform:scale(1.1);
-}
-
-.btn{
-    margin-top:35px;
-    padding:15px 40px;
-    background:#ffd700;
-    color:black;
-    font-weight:bold;
-    text-decoration:none;
-    border-radius:50px;
-    transition:0.3s;
-    box-shadow:0 0 20px #ffd700;
-}
-
-.btn:hover{
-    background:white;
-    box-shadow:0 0 30px white;
-}
-
-/* ===== SECTIONS ===== */
-section{
-    padding:100px 20px;
-    text-align:center;
-}
-
-section h2{
-    font-size:2.5rem;
-    margin-bottom:30px;
-    color:#ffd700;
-    text-shadow:0 0 15px #ffd700;
-}
-
-/* ===== FEATURES ===== */
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    margin-top:40px;
-}
-
-.card{
-    background:#141414;
-    padding:35px;
-    border-radius:20px;
-    transition:0.4s;
-    border:1px solid #222;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    border:1px solid #ffd700;
-    box-shadow:0 0 20px #ffd70033;
-}
-
-/* ===== RULES ===== */
-.rules{
-    background:#111;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:black;
-    padding:40px;
-    text-align:center;
-    color:#777;
-    font-size:0.9rem;
-}
+body{margin:0;font-family:'Orbitron',sans-serif;background:#0b0b0b;color:white;}
+header{height:100vh;background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('https://images.unsplash.com/photo-1627856014754-0c1a7f5c4c08') center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;}
+header h1{font-size:4rem;color:#ffd700;text-shadow:0 0 25px #ffd700;}
+header p{margin-top:20px;font-size:1.2rem;max-width:600px;opacity:0.9;}
+.btn{margin-top:35px;padding:15px 40px;background:#ffd700;color:black;font-weight:bold;text-decoration:none;border-radius:50px;transition:0.3s;box-shadow:0 0 20px #ffd700;}
+.btn:hover{background:white;box-shadow:0 0 30px white;}
+footer{background:black;padding:40px;text-align:center;color:#777;font-size:0.9rem;}
 </style>
 </head>
 <body>
+<nav style="background:#111;padding:15px;text-align:center;">
+  <a href="index.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Home</a>
+  <a href="about.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">ValeStudio</a>
+  <a href="valesmp.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">ValeSMP</a>
+  <a href="plugins.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Plugins</a>
+  <a href="info.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Infos</a>
+</nav>
 
 <header>
-    <h1>ValeStudio</h1>
-    <p>Willkommen auf ValeSMP – deinem Minecraft Survival Server mit Events, Community und epischen Projekten.</p>
-    <div class="server-ip" onclick="copyIP()">valesmp.de</div>
-    <a href="#about" class="btn">Server entdecken</a>
+<h1>ValeStudio</h1>
+<p>Willkommen auf ValeSMP – deinem Minecraft Survival Server mit Events, Community und epischen Projekten.</p>
+<a href="valesmp.html" class="btn">Jetzt joinen</a>
 </header>
 
-<section id="about">
-    <h2>Über ValeSMP</h2>
-    <p>Ein moderner Survival-Server mit starken Community-Features, spannenden Events und eigener Economy.</p>
-</section>
-
-<section>
-    <h2>Features</h2>
-    <div class="features">
-        <div class="card">
-            <h3>🌍 Survival+</h3>
-            <p>Vanilla Feeling mit besonderen Extras.</p>
-        </div>
-        <div class="card">
-            <h3>🎉 Events</h3>
-            <p>Regelmäßige Server-Events mit Belohnungen.</p>
-        </div>
-        <div class="card">
-            <h3>💰 Economy</h3>
-            <p>Handel, Shops & Wirtschaftssystem.</p>
-        </div>
-        <div class="card">
-            <h3>⚔️ Community</h3>
-            <p>Freundliche Spieler & aktives Team.</p>
-        </div>
-    </div>
-</section>
-
-<section class="rules">
-    <h2>Regeln</h2>
-    <p>✔ Kein Griefing &nbsp; ✔ Kein Cheating &nbsp; ✔ Respektvoll bleiben &nbsp; ✔ Fair spielen</p>
-</section>
-
 <footer>
-    © 2026 ValeStudio | Server IP: valesmp.de
+© 2026 ValeStudio | Server IP: valesmp.de
 </footer>
-
-<script>
-function copyIP(){
-    navigator.clipboard.writeText("valesmp.de");
-    alert("Server IP kopiert!");
-}
-</script>
-
 </body>
 </html>
