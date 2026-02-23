@@ -6,51 +6,72 @@
 <title>ValeStudio | ValeSMP</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Orbitron',sans-serif;background:#0b0b0b;color:white;}
-section{padding:80px 20px;text-align:center;}
-h2{font-size:2.5rem;margin-bottom:30px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
-p{max-width:700px;margin:auto;font-size:1.2rem;opacity:0.9;}
+body{margin:0;font-family:'Orbitron',sans-serif;background:#0b0b0b;color:white;text-align:center;}
+nav{background:#111;padding:15px;text-align:center;}
+nav a{color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:white;}
+header{background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('https://images.unsplash.com/photo-1627856014754-0c1a7f5c4c08') center/cover;height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+header h1{font-size:4rem;color:#ffd700;text-shadow:0 0 25px #ffd700;}
+header p{margin-top:15px;font-size:1.3rem;max-width:600px;opacity:0.9;}
+.btn, .ip-btn{margin-top:20px;padding:15px 35px;background:#ffd700;color:black;font-weight:bold;text-decoration:none;border-radius:50px;transition:0.3s;cursor:pointer;box-shadow:0 0 20px #ffd700;}
+.btn:hover, .ip-btn:hover{background:white;box-shadow:0 0 30px #ffd700;}
+.section{padding:80px 20px;}
+.section h2{font-size:2.5rem;margin-bottom:30px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
 .card{background:#141414;padding:30px;border-radius:20px;transition:0.4s;border:1px solid #222;}
 .card:hover{transform:translateY(-10px);border:1px solid #ffd700;box-shadow:0 0 20px #ffd70033;}
-footer{background:black;padding:40px;text-align:center;color:#777;font-size:0.9rem;}
+#player-count{font-size:2rem;margin-top:20px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
+footer{background:black;padding:40px;color:#777;font-size:0.9rem;text-align:center;}
 </style>
 </head>
 <body>
-<nav style="background:#111;padding:15px;text-align:center;">
-  <a href="index.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Home</a>
-  <a href="about.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">ValeStudio</a>
-  <a href="valesmp.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">ValeSMP</a>
-  <a href="plugins.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Plugins</a>
-  <a href="info.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Infos</a>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">ValeStudio</a>
+  <a href="valesmp.html">ValeSMP</a>
+  <a href="plugins.html">Plugins</a>
+  <a href="info.html">Infos</a>
 </nav>
 
-<section>
-<h2>ValeSMP Server</h2>
-<p>ValeSMP ist unser Minecraft Survival Server mit Community-Fokus. Baue, erkunde, kämpfe und werde Teil unserer wachsenden Spielerwelt!</p>
+<header>
+<h1>ValeSMP</h1>
+<p>Unser Minecraft Survival Server – Bau, kämpfe und werde Teil unserer Community!</p>
+<button class="ip-btn" onclick="copyIP()">IP kopieren: valesmp.de</button>
+<div id="player-count">Spieler online: 0</div>
+</header>
 
+<section class="section">
+<h2>Server Features</h2>
 <div class="features">
-  <div class="card">
-    <h3>🌍 Survival+</h3>
-    <p>Vanilla-Feeling mit zusätzlichen Features und Events.</p>
-  </div>
-  <div class="card">
-    <h3>🎉 Community Events</h3>
-    <p>Regelmäßig spannende Events für alle Spieler.</p>
-  </div>
-  <div class="card">
-    <h3>💰 Economy System</h3>
-    <p>Handel, Shops und eine stabile Ingame-Wirtschaft.</p>
-  </div>
-  <div class="card">
-    <h3>👥 Freundliche Community</h3>
-    <p>Aktives Team & hilfsbereite Spieler erwarten dich.</p>
-  </div>
+  <div class="card">🌍 Survival+ – Vanilla mit Extras</div>
+  <div class="card">🎉 Community Events</div>
+  <div class="card">💰 Eigenes Economy System</div>
+  <div class="card">👥 Freundliche Community & Team</div>
 </div>
 </section>
 
 <footer>
 © 2026 ValeStudio | Server IP: valesmp.de
 </footer>
+
+<script>
+// IP kopieren
+function copyIP(){
+  navigator.clipboard.writeText("valesmp.de");
+  alert("Server IP kopiert!");
+}
+
+// Spieler Counter simuliert (für echte Integration: Server Query API)
+function updatePlayerCount(){
+  // Beispiel: Zufällige Spielerzahl 0–50 simuliert
+  const count = Math.floor(Math.random()*50);
+  document.getElementById('player-count').innerText = "Spieler online: " + count;
+}
+// alle 10 Sekunden aktualisieren
+updatePlayerCount();
+setInterval(updatePlayerCount, 10000);
+</script>
+
 </body>
 </html>
