@@ -6,66 +6,46 @@
 <title>ValeStudio | Plugins</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Orbitron',sans-serif;background:#0b0b0b;color:white;}
-section{padding:80px 20px;text-align:center;}
-h2{font-size:2.5rem;margin-bottom:30px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
-.card{background:#141414;padding:30px;border-radius:20px;transition:0.4s;border:1px solid #222;}
-.card:hover{transform:translateY(-10px);border:1px solid #ffd700;box-shadow:0 0 20px #ffd70033;}
-.card h3{margin-bottom:10px;}
-.card p{margin-bottom:15px;}
-.download-btn{
-    padding:10px 25px;
+body{margin:0;font-family:'Orbitron',sans-serif;background:#0b0b0b;color:white;text-align:center;}
+nav{background:#111;padding:15px;text-align:center;}
+nav a{color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:white;}
+section{padding:80px 20px;}
+h2{font-size:2.5rem;margin-bottom:50px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
+.plugin-link{
+    display:inline-block;
+    padding:20px 40px;
+    margin:15px;
     background:#ffd700;
     color:black;
     font-weight:bold;
-    text-decoration:none;
     border-radius:50px;
+    text-decoration:none;
     transition:0.3s;
 }
-.download-btn:hover{
+.plugin-link:hover{
     background:white;
-    box-shadow:0 0 15px #ffd700;
+    box-shadow:0 0 20px #ffd700;
 }
-footer{background:black;padding:40px;text-align:center;color:#777;font-size:0.9rem;}
+footer{background:black;padding:40px;color:#777;font-size:0.9rem;}
 </style>
 </head>
 <body>
 
-<nav style="background:#111;padding:15px;text-align:center;">
-  <a href="index.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Home</a>
-  <a href="about.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">ValeStudio</a>
-  <a href="valesmp.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">ValeSMP</a>
-  <a href="plugins.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Plugins</a>
-  <a href="info.html" style="color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;">Infos</a>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">ValeStudio</a>
+  <a href="valesmp.html">ValeSMP</a>
+  <a href="plugins.html">Plugins</a>
+  <a href="info.html">Infos</a>
 </nav>
 
 <section>
 <h2>Unsere Plugins</h2>
-<p>Alle Plugins hier sind von ValeStudio selbst entwickelt.</p>
-
-<div class="features">
-  <div class="card">
-    <h3>EssentialsX Custom</h3>
-    <p>Basisfunktionen erweitert für unseren Server. <strong>(Eigenes Plugin)</strong></p>
-    <a href="downloads/EssentialsX_Custom.jar" class="download-btn">Download</a>
-  </div>
-  <div class="card">
-    <h3>ValeSMP Tools</h3>
-    <p>Server-spezifische Admin- und Spieler-Tools. <strong>(Eigenes Plugin)</strong></p>
-    <a href="downloads/ValeSMP_Tools.jar" class="download-btn">Download</a>
-  </div>
-  <div class="card">
-    <h3>ValeEconomy</h3>
-    <p>Unser individuelles Wirtschaftssystem für den Server. <strong>(Eigenes Plugin)</strong></p>
-    <a href="downloads/ValeEconomy.jar" class="download-btn">Download</a>
-  </div>
-  <div class="card">
-    <h3>ValeDynmap Enhancer</h3>
-    <p>Erweiterungen für die Dynmap-Integration. <strong>(Eigenes Plugin)</strong></p>
-    <a href="downloads/ValeDynmap_Enhancer.jar" class="download-btn">Download</a>
-  </div>
-</div>
+<a href="EssentialsX_Custom.jar" class="plugin-link" download>EssentialsX Custom</a>
+<a href="ValeSMP_Tools.jar" class="plugin-link" download>ValeSMP Tools</a>
+<a href="ValeEconomy.jar" class="plugin-link" download>ValeEconomy</a>
+<a href="ValeDynmap_Enhancer.jar" class="plugin-link" download>ValeDynmap Enhancer</a>
 </section>
 
 <footer>
