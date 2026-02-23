@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ValeStudio | ValeSMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1627856014754-0c1a7f5c4c08") center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4rem;
+    color: #00ff99;
+}
+
+header p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: #00ff99;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #222;
+}
+
+footer {
+    background: #000;
+    padding: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.server-ip {
+    font-size: 1.5rem;
+    color: #00ff99;
+    margin-top: 15px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ValeStudio</h1>
+    <p>Willkommen auf ValeSMP – deinem Minecraft Survival Server mit Events, Community & epischen Projekten.</p>
+    <div class="server-ip" onclick="copyIP()">valesmp.de</div>
+    <a href="#about" class="btn">Mehr erfahren</a>
+</header>
+
+<section id="about">
+    <h2>Über ValeSMP</h2>
+    <p>ValeSMP ist ein Community Survival Server mit eigenen Features, Events und einer starken Community.</p>
+</section>
+
+<section>
+    <h2>Features</h2>
+    <div class="features">
+        <div class="card">
+            <h3>🌍 Survival</h3>
+            <p>Vanilla-Feeling mit extra Features.</p>
+        </div>
+        <div class="card">
+            <h3>🎉 Events</h3>
+            <p>Regelmäßige Community-Events.</p>
+        </div>
+        <div class="card">
+            <h3>💎 Economy</h3>
+            <p>Handelssystem & Ingame-Wirtschaft.</p>
+        </div>
+        <div class="card">
+            <h3>👥 Community</h3>
+            <p>Freundliche Spieler & aktives Team.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Regeln</h2>
+    <p>Kein Griefing · Kein Cheating · Respektvoll bleiben · Fair spielen</p>
+</section>
+
+<footer>
+    © 2026 ValeStudio | Server IP: valesmp.de
+</footer>
+
+<script>
+function copyIP() {
+    navigator.clipboard.writeText("valesmp.de");
+    alert("Server IP kopiert!");
+}
+</script>
+
+</body>
+</html>
