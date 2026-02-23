@@ -6,22 +6,110 @@
 <title>ValeStudio | ValeSMP</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Orbitron',sans-serif;background:#0b0b0b;color:white;text-align:center;}
-nav{background:#111;padding:15px;text-align:center;}
-nav a{color:#ffd700;margin:0 15px;text-decoration:none;font-weight:bold;}
-nav a:hover{color:white;}
-header{background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('https://images.unsplash.com/photo-1627856014754-0c1a7f5c4c08') center/cover;height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-header h1{font-size:4rem;color:#ffd700;text-shadow:0 0 25px #ffd700;}
-header p{margin-top:15px;font-size:1.3rem;max-width:600px;opacity:0.9;}
-.btn, .ip-btn{margin-top:20px;padding:15px 35px;background:#ffd700;color:black;font-weight:bold;text-decoration:none;border-radius:50px;transition:0.3s;cursor:pointer;box-shadow:0 0 20px #ffd700;}
-.btn:hover, .ip-btn:hover{background:white;box-shadow:0 0 30px #ffd700;}
-.section{padding:80px 20px;}
-.section h2{font-size:2.5rem;margin-bottom:30px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
-.card{background:#141414;padding:30px;border-radius:20px;transition:0.4s;border:1px solid #222;}
-.card:hover{transform:translateY(-10px);border:1px solid #ffd700;box-shadow:0 0 20px #ffd70033;}
-#player-count{font-size:2rem;margin-top:20px;color:#ffd700;text-shadow:0 0 15px #ffd700;}
-footer{background:black;padding:40px;color:#777;font-size:0.9rem;text-align:center;}
+body{
+  margin:0;
+  font-family:'Orbitron',sans-serif;
+  background:#0b0b0b;
+  color:white;
+  text-align:center;
+}
+nav{
+  background:#111;
+  padding:15px;
+  text-align:center;
+}
+nav a{
+  color:#ffd700;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a:hover{
+  color:white;
+}
+header{
+  background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+  url('https://images.unsplash.com/photo-1627856014754-0c1a7f5c4c08') center/cover;
+  height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+header h1{
+  font-size:4rem;
+  color:#ffd700;
+  text-shadow:0 0 25px #ffd700;
+}
+header p{
+  margin-top:15px;
+  font-size:1.3rem;
+  max-width:600px;
+  opacity:0.9;
+}
+.ip-btn{
+  margin-top:20px;
+  padding:15px 35px;
+  background:#ffd700;
+  color:black;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:50px;
+  transition:0.3s;
+  cursor:pointer;
+  box-shadow:0 0 20px #ffd700;
+}
+.ip-btn:hover{
+  background:white;
+  box-shadow:0 0 30px #ffd700;
+}
+.section{
+  padding:80px 20px;
+}
+.section h2{
+  font-size:2.5rem;
+  margin-bottom:30px;
+  color:#ffd700;
+  text-shadow:0 0 15px #ffd700;
+}
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+.card{
+  background:#141414;
+  padding:30px;
+  border-radius:20px;
+  transition:0.4s;
+  border:1px solid #222;
+}
+.card:hover{
+  transform:translateY(-10px);
+  border:1px solid #ffd700;
+  box-shadow:0 0 20px #ffd70033;
+}
+#player-count{
+  font-size:2rem;
+  margin-top:20px;
+  color:#ffd700;
+  text-shadow:0 0 15px #ffd700;
+}
+#server-status{
+  margin-top:8px;
+  color:#ccc;
+  font-size:1rem;
+}
+.footer{
+  background:black;
+  padding:40px;
+  color:#777;
+  font-size:0.9rem;
+  text-align:center;
+}
 </style>
 </head>
 <body>
@@ -37,8 +125,9 @@ footer{background:black;padding:40px;color:#777;font-size:0.9rem;text-align:cent
 <header>
 <h1>ValeSMP</h1>
 <p>Unser Minecraft Survival Server – Bau, kämpfe und werde Teil unserer Community!</p>
-<button class="ip-btn" onclick="copyIP()">IP kopieren: valesmp.de</button>
-<div id="player-count">Spieler online: 0</div>
+<a class="ip-btn" href="valesmp.de">Server-IP: valesmp.de</a>
+<div id="player-count">Spieler online: …</div>
+<div id="server-status">Status wird geladen…</div>
 </header>
 
 <section class="section">
@@ -51,26 +140,34 @@ footer{background:black;padding:40px;color:#777;font-size:0.9rem;text-align:cent
 </div>
 </section>
 
-<footer>
+<div class="footer">
 © 2026 ValeStudio | Server IP: valesmp.de
-</footer>
+</div>
 
 <script>
-// IP kopieren
-function copyIP(){
-  navigator.clipboard.writeText("valesmp.de");
-  alert("Server IP kopiert!");
+// Live Server Status & Spieler Counter
+async function updateServerStatus(){
+  try{
+    const res = await fetch("https://api.mcsrvstat.us/2/valesmp.de");
+    const data = await res.json();
+    if(data.online){
+      document.getElementById("server-status").innerText = "Status: Online";
+      document.getElementById("player-count").innerText =
+        "Spieler online: " + data.players.online + " / " + data.players.max;
+    } else {
+      document.getElementById("server-status").innerText = "Status: Offline";
+      document.getElementById("player-count").innerText = "Spieler online: 0";
+    }
+  }catch(err){
+    document.getElementById("server-status").innerText = "Status: Fehler";
+    document.getElementById("player-count").innerText = "Spieler online: …";
+    console.error(err);
+  }
 }
 
-// Spieler Counter simuliert (für echte Integration: Server Query API)
-function updatePlayerCount(){
-  // Beispiel: Zufällige Spielerzahl 0–50 simuliert
-  const count = Math.floor(Math.random()*50);
-  document.getElementById('player-count').innerText = "Spieler online: " + count;
-}
-// alle 10 Sekunden aktualisieren
-updatePlayerCount();
-setInterval(updatePlayerCount, 10000);
+// Beim Laden + alle 15 Sekunden aktualisieren
+updateServerStatus();
+setInterval(updateServerStatus,15000);
 </script>
 
 </body>
